@@ -29,9 +29,18 @@ will run only api tests
 --headless | Allow to run test in 'headless' mode, default settings - True
 --file_log_level | Sets log level to write logs to files. default setting  - 'WARNING'. See "Logging" part below
 ```
+
+### Run example:
+Will run tests in 'n' parallel threads, only tests marked as 'api_test', will write all logs above level 'INFO',
+headless mode OFF, browser Chrome
+```
+pytest -l -n auto -m api_test --file_log_level INFO --headless False --browser_type Chrome 
+```
+
 ### Run in parallel with pytest xdist plugin:
 ```
-pytest -n auto | With this call, pytest will spawn a number of workers processes equal to the number of available CPUs, and distribute the tests randomly across them. 
+pytest -n auto | With this call, pytest will spawn a number of workers processes equal to the number of available CPUs,
+and distribute the tests randomly across them. 
 ```
 for more information please check xdist project documentation
 
@@ -46,10 +55,6 @@ ERROR
 WARNING
 INFO
 DEBUG
-```
-### Run example:
-```
-pytest -l -n auto -m api_test --file_log_level INFO --headless False --browser_type Chrome 
 ```
 
 ### Reporting:
