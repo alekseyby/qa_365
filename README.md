@@ -63,4 +63,10 @@ To create Allure report, eg. est_api.py:
 pytest --alluredir=<path to report directory> test_api.py
 allure serve <path to report directory>
 ```
+#### We can see allure report with detailed steps
 
+![Screenshot](allure_report_example_1.png)
+
+#### Logs and console outputs
+
+![Screenshot](allure_report_example_2.png)
