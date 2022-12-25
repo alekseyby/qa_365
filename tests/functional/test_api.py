@@ -29,7 +29,7 @@ def get_random_user_id():
     assert response.status_code == 200
     user = random.choice(response_json)
     # add user email to allure report
-    with allure.step(f' Test UserID is - {user["email"]}'):
+    with allure.step(f' Test email is - {user["email"]}'):
         yield user['id']
 
 
