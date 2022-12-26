@@ -1,7 +1,7 @@
 import csv
 
 
-def read_test_data_from_csv():
+def read_test_data_from_csv(data_file):
     test_data = []
     filename = 'data/users.csv'
     try:
