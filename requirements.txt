@@ -13,3 +13,4 @@ dataclasses==0.8
 flask==2.0.3
 itsdangerous==2.0.1
 uuid==1.30
+confluent-kafka-1.9.2
