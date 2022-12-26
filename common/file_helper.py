@@ -3,7 +3,7 @@ import csv
 
 def read_test_data_from_csv(data_file):
     test_data = []
-    filename = 'data/users.csv'
+    filename = data_file
     try:
         with open(filename, newline='') as csvfile:
             data = csv.reader(csvfile, delimiter=',')
