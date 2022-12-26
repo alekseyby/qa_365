@@ -4,3 +4,4 @@ pytest-xdist==3.0.2
 requests==2.27.1
 selenium==3.141.0
 webdriver-manager==3.7.1
+psycopg2==2.9.5
