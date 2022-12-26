@@ -9,7 +9,12 @@ qa_365/tests/functional/test_scv_data.py  -- api test uses csv_file to get and a
 qa_365/tests/functional/test_mock.py -- simple mock test with Flask
 ```
 ```
-qa_365/common  --  helpers for tests 
+qa_365/common/db_helper  --  Helper to connect and perfome queries to PostgreSQL DB
+qa_365/common/file_helper  -- Reader data from CSV
+qa_365/common/log_helper  -- Log helper module. See "Logging" part below
+qa_365/common/mockserver  -- Simple mock server on Flask
+qa_365/common/queues  -- Consumer for Kafka, allow read messages from topics
+
 qa_365/data --  test data files
 ```
 ### How to install project:
