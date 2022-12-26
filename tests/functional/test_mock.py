@@ -16,6 +16,7 @@ def mock_server(request):
 
 @pytest.mark.mock_test
 def test_mock_server(mock_server):
+    """Test starts Flask server, creates endpoind "mocked_url" with json data, and assert it"""
     server = MockServer(port=1234)
     server.start()
     server.add_json_response("/mocked_url", dict(user_name="Mock_User"))
