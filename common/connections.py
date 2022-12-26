@@ -9,14 +9,12 @@ DSN = f"host='{host}' port='{port}' dbname='{dbname}' user='{user}' password='{p
 
 query = "SELECT * FROM rnc_database"
 
-conn = psycopg2.connect(DSN)
+connection = psycopg2.connect(DSN)
 try:
 
-    with conn:
-        with conn.cursor() as curs:
-            curs.execute(query)
-            rows = curs.fetchall()
-            print(rows)
+    with connection, connection.cursor() as cursor:
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        print(rows)
 finally:
-    conn.close()
-
+    cursor.close()
