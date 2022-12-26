@@ -5,6 +5,7 @@ qa_365/tests/functional/test_api.py -- api tests with logs examples and allure r
 qa_365/tests/functional/test_e2e.py -- selenium web test
 qa_365/tests/functional/test_db.py -- simple test for db connect check
 qa_365/tests/functional/test_scv_data.py  -- api test uses csv_file to get and assert api request
+qa_365/tests/functional/test_mock.py -- simple mock test with Flask
 
 qa_365/common  --  helpers for tests 
 qa_365/data --  test data files
@@ -23,7 +24,7 @@ pip install -r requirements.txt
 ```
 ### Hot to run tests:
 Default run for all test, supports all default pytest flags, eg -m that allows to run "tagged" test.
-This project contains tests marked as "e2e_test", "api_test", "db_test"
+This project contains tests marked as "e2e_test", "api_test", "db_test", "mock_test"
 ```
 pytest -l -m api_test
 ```
