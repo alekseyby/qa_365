@@ -1,15 +1,17 @@
 # qa_365
 
-Project contains functional tests for API, Web e2e, DB, CSV data reading test:
+Project contains functional tests for API, Web E2E, DB connect, parameterized with CSV data file , Mock:
+```
 qa_365/tests/functional/test_api.py -- api tests with logs examples and allure reporting BDD example
 qa_365/tests/functional/test_e2e.py -- selenium web test
 qa_365/tests/functional/test_db.py -- simple test for db connect check
 qa_365/tests/functional/test_scv_data.py  -- api test uses csv_file to get and assert api request
 qa_365/tests/functional/test_mock.py -- simple mock test with Flask
-
+```
+```
 qa_365/common  --  helpers for tests 
 qa_365/data --  test data files
-
+```
 ### How to install project:
 1. Make 'git clone' project 
 2. cd to the directory with requirements.txt
