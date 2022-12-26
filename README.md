@@ -57,6 +57,10 @@ WARNING
 INFO
 DEBUG
 ```
+### DB connections
+Module db_adapter.py allows to connect and read data as part of pre/post test conditions.
+Please check test_db.py for usage example.
+Take a note that for now it uses third party PostgresDB for module main functionality testing
 
 ### Reporting:
 To create Allure report, eg. est_api.py:

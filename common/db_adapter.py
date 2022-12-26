@@ -1,7 +1,9 @@
 import psycopg2
 
-# Need to implement the setting through the reading configuration file, it's just hardcoded
-# example with third party postgresql database - https://rnacentral.org/help/public-database
+"""
+Need to implement the setting through the reading configuration file, it's just hardcoded example with third party
+postgresql database - https://rnacentral.org/help/public-database
+"""
 
 HOST = 'hh-pgsql-public.ebi.ac.uk'
 PORT = 5432
