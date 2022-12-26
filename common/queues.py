@@ -1,13 +1,20 @@
 from confluent_kafka import Consumer, TopicPartition
+from confluent_kafka.admin import AdminClient
 
 
 class QueueClass:
     """Base class to work with Kafka, contains method to create Consumer and get amount of messages in topic
     """
+
     def __init__(self, host, port):
-        self.bootstrap_server = f'{host}:{port}'
-        self.topic = None
-        self.npartitions = None
+        self.bootstrap_server = '{}:{}'.format(host, port)
+        self.admin = AdminClient({'bootstrap.servers': self.bootstrap_server, 'security.protocol': 'SASL_SSL',
+                                  'sasl.mechanisms': 'PLAIN',
+                                  'sasl.username': 'ADSD',
+                                  'sasl.password': 'ADSD'
+                                  })
+        self.topic = 'kafka-test'
+        self.npartitions = 5
         self.consumer = None
 
     def create_consumer(self, auto_offset_reset='earliest', group_id=''):
@@ -33,3 +40,8 @@ class QueueClass:
                 messages.append(msg)
             self.consumer.close()
         return messages
+
+
+test_queue = QueueClass('pkc-lq8v7.eu-central-1.aws.confluent.cloud', 9092)
+test_queue.create_consumer(group_id='web-3ea22c97-d625-4bb2-ba91-e3c48d38378a')
+messages = test_queue.consume_msgs()
