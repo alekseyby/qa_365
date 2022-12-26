@@ -4,6 +4,7 @@ import json
 import random
 import allure
 from common import log_helper
+from common.connections import DBConnections
 from tests.variables import USERS_URL, POSTS_URL
 
 
@@ -68,3 +69,10 @@ class TestApiGateway:
         log = log_helper.get_logger(__name__)
         log.info(f' Test user create post: {created_post}')
 
+    @allure.title("Test: retrieve a list of RNAcentral databases")
+    @allure.description("""Test checks connection to https://rnacentral.org/help/public-database""")
+    def test_db_connection(self):
+        query = "SELECT * FROM rnc_database"
+        with DBConnections as db_conn:
+            # retrieve a list of RNAcentral databases
+            db_conn.pg_perform_query(query)

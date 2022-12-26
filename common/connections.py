@@ -1,11 +1,14 @@
 import psycopg2
 
-host = 'hh-pgsql-public.ebi.ac.uk'
-port = 5432
-dbname = 'pfmegrnargs'
-user = 'reader'
-password = 'NWDMCE5xdipIjRrp'
-DATABASE = f"host='{host}' port='{port}' dbname='{dbname}' user='{user}' password='{password}'"
+# Need to implement the setting through the reading configuration file, it's just hardcoded
+# example with third party postgresql database - https://rnacentral.org/help/public-database
+
+HOST = 'hh-pgsql-public.ebi.ac.uk'
+PORT = 5432
+DBNAME = 'pfmegrnargs'
+USER = 'reader'
+PASSWORD = 'NWDMCE5xdipIjRrp'
+DATABASE = f"host='{HOST}' port='{PORT}' dbname='{DBNAME}' user='{USER}' password='{PASSWORD}'"
 
 
 class DBConnections:
@@ -33,10 +36,3 @@ class DBConnections:
     def pg_perform_query(self, sql):
         """Returns query result from postgresDB"""
         return self._query(self.postgres_db, sql=sql)
-
-
-query = "SELECT * FROM rnc_database"
-with DBConnections() as dbconn:
-    response = dbconn.pg_perform_query(query)
-print('X'*100)
-print(response)
