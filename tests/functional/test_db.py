@@ -2,7 +2,6 @@ import pytest
 import allure
 from common import log_helper
 from common.db_adapter import DBConnections
-from common.file_reader import CSV
 
 
 @allure.title("Test: retrieve a list of RNAcentral databases")
