@@ -1,8 +1,9 @@
 # qa_365
 
-Project contains functional tests for API and Web e2e tests:
+Project contains functional tests for API, Web e2e, DB test tests:
 /tests/functional/test_api.py
 /tests/functional/test_e2e.py
+/tests/functional/test_db.py
 
 ### How to install project:
 1. Make 'git clone' project 
@@ -18,7 +19,7 @@ pip install -r requirements.txt
 ```
 ### Hot to run tests:
 Default run for all test, supports all default pytest flags, eg -m that allows to run "tagged" test.
-This project contains tests marked as "e2e_test" and "api_test"
+This project contains tests marked as "e2e_test", "api_test", "db_test"
 ```
 pytest -l -m api_test
 ```
